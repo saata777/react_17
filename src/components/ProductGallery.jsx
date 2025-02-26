@@ -28,7 +28,7 @@ export default function ProductGallery({ images }) {
 
   return (
     <div className="flex  flex-col items-center">
-      {/* მთავარი სურათი */}
+      
       <img
         src={activeImage}
         alt="Product"
@@ -53,7 +53,7 @@ export default function ProductGallery({ images }) {
 
       
       {lightboxOpen && (
-        <div className="fixed inset-0 bg-[#000000d8] flex flex-col items-center justify-center z-50">
+        <div className="fixed inset-0 hidden  bg-[#000000d8] sm:flex flex-col items-center justify-center z-50">
           <button
             className=" ml-90 mb-2 text-white hover:text-[#FF7E1B] cursor-pointer text-2xl"
             onClick={closeLightbox}

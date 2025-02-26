@@ -34,53 +34,33 @@ export default function App() {
   };
 
   return (
-    <div className="h-[100vh] w-[100%] flex flex-col sm:pt-[28px] sm:pr-[165px] sm:pb-[132px] sm:pl-[165px] items-center bg-white   ">
+    <div className="sm:h-[100vh] h-[900px] w-[100%] flex flex-col sm:pt-[28px] sm:pr-[165px] sm:pb-[132px] sm:pl-[165px] items-center bg-white   ">
       <div className="w-[100%] bg-white   flex flex-col items-center">
         <header className="w-full flex sm:pl-0 sm:pr-0 mt-3 Sm:mt-0 pl-5 pr-5 justify-between items-center ">
           <div className="flex flex-row gap-[56px]  ">
-            <div className="sm:hidden">
-              <div className="absolute flex items-center justify-center min-h-screen bg-gray-100">
-               
+          <div className="sm:hidden">
+              <button
+                onClick={() => setOpen(true)}
+                className="text-black text-2xl rounded-full"
+              >
+                ☰
+              </button>
+              <div
+                className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transition-all duration-300 ease-in-out ${
+                  open ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+                }`}
+              >
                 <button
-                  onClick={() => setOpen(true)}
-                  className="absolute top-1 left-3  text-black  text-2xl rounded-full"
+                  onClick={() => setOpen(false)}
+                  className="absolute top-4 left-5 text-gray-500 hover:text-gray-800 text-2xl font-bold"
                 >
-                  ☰
+                  X
                 </button>
-
-                
-                <div
-                  className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transition-all duration-300 ease-in-out ${
-                    open
-                      ? "translate-x-0 opacity-100"
-                      : "-translate-x-full opacity-0"
-                  }`}
-                >
-                  
-                  <button
-                    onClick={() => setOpen(false)}
-                    className="absolute top-4 left-5 text-gray-500 hover:text-gray-800 text-2xl font-bold"
-                  >
-                    X
-                  </button>
-
-                  
-                  <h1 className="text-2xl font-bold mt-20 p-5">
-                  Collections
-                  </h1>
-                  <h1 className="text-2xl font-bold  p-5">
-                  Men
-                  </h1>
-                  <h1 className="text-2xl font-bold  p-5">
-                  Women
-                  </h1>
-                  <h1 className="text-2xl font-bold  p-5">
-                  About
-                  </h1>
-                  <h1 className="text-2xl font-bold  p-5">
-                  Contact
-                  </h1>
-                </div>
+                <h1 className="text-2xl font-bold mt-20 p-5">Collections</h1>
+                <h1 className="text-2xl font-bold p-5">Men</h1>
+                <h1 className="text-2xl font-bold p-5">Women</h1>
+                <h1 className="text-2xl font-bold p-5">About</h1>
+                <h1 className="text-2xl font-bold p-5">Contact</h1>
               </div>
             </div>
             <h1 className="text-2xl items-center font-bold">sneakers</h1>
