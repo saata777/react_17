@@ -38,7 +38,7 @@ export default function App() {
       <div className="w-[100%] bg-white   flex flex-col items-center">
         <header className="w-full flex sm:pl-0 sm:pr-0 mt-3 Sm:mt-0 pl-5 pr-5 justify-between items-center ">
           <div className="flex flex-row gap-[56px]  ">
-          <div className="sm:hidden">
+            <div className="sm:hidden">
               <button
                 onClick={() => setOpen(true)}
                 className="text-black text-2xl rounded-full"
@@ -46,9 +46,12 @@ export default function App() {
                 ☰
               </button>
               <div
-                className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transition-all duration-300 ease-in-out ${
-                  open ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
-                }`}
+                className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transition-all duration-300 ease-in-out 
+    ${
+      open
+        ? "translate-x-0 opacity-100 pointer-events-auto"
+        : "-translate-x-full opacity-0 pointer-events-none"
+    }`}
               >
                 <button
                   onClick={() => setOpen(false)}
@@ -63,6 +66,7 @@ export default function App() {
                 <h1 className="text-2xl font-bold p-5">Contact</h1>
               </div>
             </div>
+
             <h1 className="text-2xl items-center font-bold">sneakers</h1>
             <div className="sm:flex mt-1 hidden  flex-row gap-[32px]  ">
               <h2 class="text-[#696f7d] text-[15px] font-normal h-16 hover:border-b-4 border-[#ff7e1b] cursor-pointer font-['Kumbh Sans'] hover:text-[#191a1b] leading-relaxed">
@@ -95,7 +99,6 @@ export default function App() {
               )}
             </button>
 
-           
             <div className="flex flex-row ">
               {cartOpen && <Cart cart={cart} setCart={setCart} />}
               <img

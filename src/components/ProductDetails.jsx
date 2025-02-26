@@ -53,7 +53,7 @@ export default function ProductDetails({ product, addToCart }) {
 
         
         <button
-          className="mt-4 sm:w-[275px] w-full h-14 bg-orange-500 text-white py-2 hover:opacity-75 cursor-pointer rounded-lg flex items-center justify-center gap-2"
+          className="mt-4 mb-20 sm:mb-0 sm:w-[275px] w-full h-14 bg-orange-500 text-white py-2 hover:opacity-75 cursor-pointer rounded-lg flex items-center justify-center gap-2"
           onClick={() => addToCart(quantity)}
         >
           <FaShoppingCart />
